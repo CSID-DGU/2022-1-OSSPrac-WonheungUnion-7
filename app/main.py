@@ -15,7 +15,10 @@ def result():
         result['Student Number'] = request.form.get('Student Number')
         result['Gender'] = request.form.get('Gender')
         result['Major'] = request.form.get('Major')
-        result['Programming Language'] = ', '.join(request.form.getlist('Programming Language'))
+        if request.form.getlist('Programming Language'):
+            result['Programming Language'] = ', '.join(request.form.getlist('Programming Language'))
+        else:
+            result['Programming Language'] = 'None'
 
         # 학번
         # 성별
@@ -25,5 +28,8 @@ def result():
         return render_template("result.html", result=result)
 
 
-if __name__ == '__main__':
-    app.run()
+if __name__ == "__main__":
+    # Only for debugging while developing
+    app.run(host='0.0.0.0', port=80)
+    # docker 안의 80번 포트를 docker 밖에 있는 80번 포트로 연결하는 것. 
+    # -> ' -p ' 왼쪽 80 : 도커 안의 포트, 오른쪽 80 : 도커 밖의 포트
