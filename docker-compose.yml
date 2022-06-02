@@ -1,0 +1,10 @@
+#image tag를 latest로 설정한 docker compose.yml 파일을 작성해준다.
+
+version: '3.0'
+
+services:
+        web:
+                image: astonkim/test:latest 
+                build:
+                        context: .
+                ports: [80:80]
