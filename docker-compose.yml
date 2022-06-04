@@ -1,10 +1,8 @@
 #image tag를 latest로 설정한 docker compose.yml 파일을 작성해준다.
 
-version: '3.0'
-
-services:
-        web:
-                image: astonkim/test:latest 
-                build:
-                        context: .
-                ports: [80:80]
+version: "3.0"  #docker-compose version 명시 
+services:       
+  web:  
+    build: .    #docker-compose.yml 파일과 동일한 디렉토리에 위치한 Dockerfile 사용해서 빌드한다는 것 의미
+    ports: [80:80]   #외부로 노출시킬 포트의 맵핑을 명시 # [80]에서 수정함   
+    image: img:latest   # container 생성시 사용 할 이미지 지정, image tag latest로
