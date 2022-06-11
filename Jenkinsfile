@@ -13,7 +13,7 @@ node {
         }
         stage('Build'){
             sh(script: 'sudo apt-get install -y docker-compose')
-            sh(script: 'docker-compose up')
+            sh(script: 'docker-compose build')
         }
         stage('Tag') {
             sh(script: '''docker tag ${DOCKER_USER_ID}/flask \
