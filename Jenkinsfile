@@ -12,8 +12,8 @@ node {
             git branch: 'main', url: 'https://github.com/CSID-DGU/2022-1-OSSPrac-WonheungUnion-7'
         }
         stage('Build'){
-            sh(script: 'apt-get install -y docker-compose')
-            sh(script: 'docker-compose build')
+            // sh(script: 'apt-get install -y docker-compose')
+            sh(script: 'docker-compose build web')
         }
         stage('Tag') {
             sh(script: '''docker tag ${DOCKER_USER_ID}/flask \
