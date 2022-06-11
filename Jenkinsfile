@@ -11,6 +11,11 @@ node {
         stage('Pull') {
             git branch: 'main', url: 'https://github.com/CSID-DGU/2022-1-OSSPrac-WonheungUnion-7'
         }
+        stage('test') {
+            withEnv(["PATH=$PATH:~/.local/bin"]){
+                sh "bash test.sh"
+                }
+        }   
         stage('Build'){
             sh(script: 'apt-get install docker-compose')
             sh(script: 'docker-compose build')
