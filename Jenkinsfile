@@ -1,5 +1,5 @@
 node {
-    git poll: true, url: 'https://github.com/CSID-DGU/2022-1-OSSPrac-WonheungUnion-7'
+    git poll: true, branch: 'main', url: 'https://github.com/CSID-DGU/2022-1-OSSPrac-WonheungUnion-7'
     withCredentials([[$class: 'UsernamePasswordMultiBinding',
 
     credentialsId: 'docker-hub',
