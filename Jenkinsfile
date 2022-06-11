@@ -14,8 +14,7 @@ node {
         stage('Build'){
             sh(script: 'sudo killall apt apt-get')
             sh(script: 'apt-get install docker-compose')
-            sh(script: 'sudo chmod +x /usr/local/bin/docker-compose')
-            sh(script: 'docker-compose build web')
+            sh(script: 'docker-compose build')
         }
         stage('Tag') {
             sh(script: '''docker tag ${DOCKER_USER_ID}/flask \
