@@ -22,6 +22,7 @@ node {
         stage('Push') {
             sh(script: 'docker login -u ${DOCKER_USER_ID} -p ${DOCKER_USER_PASSWORD}')
             sh(script: 'docker push ${DOCKER_USER_ID}/uwsgi-nginx-flask:${BUILD_NUMBER}') 
+            sh(script: 'docker push ${DOCKER_USER_ID}/flask:latest')
         }
         stage('Deploy') {
             sh(script: 'docker-compose up -d production')
