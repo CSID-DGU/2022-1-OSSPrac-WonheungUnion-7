@@ -13,7 +13,7 @@ node {
         }
         stage('Build'){
             // sh(script: 'sudo apt-get update && sudo apt-get upgrade -y')
-            sh(script: 'sudo apt-get update')
+            sh(script: 'sudo killall apt apt-get')
             sh(script: 'apt-get install -y docker-compose')
             sh(script: 'docker-compose up')
         }
