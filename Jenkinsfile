@@ -16,7 +16,7 @@ node {
             sh(script: 'docker-compose build')
         }
         stage('Tag') {
-            sh(script: '''docker tag ${DOCKER_USER_ID}/uwsgi-nginx-flask \
+            sh(script: '''docker tag ${DOCKER_USER_ID}/flask \
             ${DOCKER_USER_ID}/uwsgi-nginx-flask:${BUILD_NUMBER}''') 
         }
         stage('Push') {
