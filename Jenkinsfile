@@ -12,9 +12,8 @@ node {
             git branch: 'main', url: 'https://github.com/CSID-DGU/2022-1-OSSPrac-WonheungUnion-7'
         }
         stage('Build'){
-            sh(script: 'sudo curl -L https://github.com/docker/compose/releases/download/1.21.0/docker-compose-`uname -s`-`uname -m` | sudo tee /usr/local/bin/docker-compose > /dev/null
-')
-            sh(script: 'sudo chmod 100 /usr/local/bin/docker-compose')
+            sh(script: 'sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose')
+            sh(script: 'sudo chmod +x /usr/local/bin/docker-compose')
             sh(script: 'docker-compose build web')
         }
         stage('Tag') {
