@@ -9,10 +9,7 @@ node {
     passwordVariable: 'DOCKER_USER_PASSWORD']]) { 
     
         stage('Pull') {
-            git clone 'https://github.com/CSID-DGU/2022-1-OSSPrac-WonheungUnion-7'
-        }
-        stage('Unit Test') {
-            
+            git branch: 'main', url: 'https://github.com/CSID-DGU/2022-1-OSSPrac-WonheungUnion-7'
         }
         stage('Build'){
             sh(script: 'docker-compose build')
