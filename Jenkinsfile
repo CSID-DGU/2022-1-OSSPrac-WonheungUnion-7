@@ -11,9 +11,6 @@ node {
         stage('Pull') {
             git branch: 'main', url: 'https://github.com/CSID-DGU/2022-1-OSSPrac-WonheungUnion-7'
         }
-        stage('Unit Test') {
-            
-        }
         stage('Build'){
             sh(script: 'docker-compose build')
         }
