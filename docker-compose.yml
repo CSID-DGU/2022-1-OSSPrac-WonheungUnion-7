@@ -11,10 +11,7 @@ services:
     volumes:
 
       - .:/code
-    command:
-      - app.py
-      - apt-get install -y docker-compose
-
+    command: app.py
     ports:
 
       - "80:80"
