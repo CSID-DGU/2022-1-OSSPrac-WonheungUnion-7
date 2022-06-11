@@ -7,7 +7,6 @@ services:
     image: ${DOCKER_USER_ID}/flask   # container 생성시 사용 할 이미지 지정, image tag latest로
   
   production:
-
     image: ${DOCKER_USER_ID}/flask:${BUILD_NUMBER}
     volumes:
 
