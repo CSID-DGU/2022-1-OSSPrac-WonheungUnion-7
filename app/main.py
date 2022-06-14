@@ -13,7 +13,6 @@ def result():
         result = dict()
         result['Name'] = request.form.get('Name')
         result['Univ'] = request.form.get('Univ')
-        result['soju'] = request.form.get('soju')
         result['Student Number'] = request.form.get('Student Number')
         result['Gender'] = request.form.get('Gender')
         result['Major'] = request.form.get('Major')
